@@ -66,7 +66,7 @@ function egiaztatu() {
 		wrong = 0;
 	}
 
-	if (quest.length > 10) {
+	if (quest.length >= 10) {
 		document.getElementById('galdera').style.boxShadow =  "0 0 5px 1px green";
 	} else {
 		document.getElementById('galdera').style.boxShadow =  "0 0 5px 1px red";

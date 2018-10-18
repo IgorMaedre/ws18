@@ -34,21 +34,21 @@
     
 	
 	<div class="container">
-		<form id="galderenF" name="galderenF" action="php/proba.php">
+		<form id="galderenF" name="galderenF" action="php/addQuestions.php" method="POST">
 			<label>Zure eposta: (*)</label> 
-			<input id="eposta" type="text" required pattern="[a-z]{5,}[0-9]{3}@ikasle.ehu.eus"><br>
+			<input id="eposta" name="eposta" type="text" required pattern="[a-z]{5,}[0-9]{3}@ikasle.ehu.eus"><br>
 			<label>Galdera: (*)</label> 
-			<input id="galdera" type="text" required minlength="10"><br><br>
+			<input id="galdera" name="galdera" type="text" required minlength="10"><br><br>
 			<label>Erantzun zuzena: (*)</label> 
-			<input id="ezuz" type="text" required><br>
+			<input id="ezuz" name="ezuz" type="text" required><br>
 			<label>Erantzun okerra1: (*)</label> 
-			<input id="eok1" type="text" required><br>
+			<input id="eok1" name="eok1" type="text" required><br>
 			<label>Erantzun okerra2: (*)</label> 
-			<input id="eok2" type="text" required><br>
+			<input id="eok2" name="eok2" type="text" required><br>
 			<label>Erantzun okerra3: (*)</label> 
-			<input id="eok3" type="text" required><br><br>
+			<input id="eok3" name="eok3" type="text" required><br><br>
 			<label>Galderaren zailtasuna: (*)</label>
-			<select id="zail" required>
+			<select id="zail" name="zail" required>
 				<option value="0">0</option>
   				<option value="1">1</option>
   				<option value="2">2</option>
@@ -57,7 +57,7 @@
   				<option value="5">5</option>
 			</select><br><br>
 			<label>Galderaren gaia: (*)</label> 
-			<input id="gaia" type="text" required><br><br>
+			<input id="gaia" name="gaia" type="text" required><br><br>
 			<input type="submit" id="sub" value="Gehitu galdera"><br>
 		</form>
 	</div>
