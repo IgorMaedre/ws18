@@ -5,10 +5,7 @@
 </html>
 <?php 
 	
-	$server = "localhost";
-	$user = "root";
-	$pass = "";
-	$database = "quizz";
+	include 'dbConfig.php';
 
 	$connection = new mysqli($server, $user, $pass, $database);
 
@@ -35,5 +32,5 @@
 
 	$connection->close();
 
-	echo "Itzuli hasierako orrira: <a href='../layout.html'>Layout</a> <br> Egin galdera berri bat: <a href='../addQuestion5.html'>AddQuestion5</a>";
+	echo "Itzuli hasierako orrira: <a href='../layout.html'>Layout</a> <br> Egin galdera berri bat: <a href='../addQuestion5.html'>AddQuestion5</a> <br> Ikusi datubaseko galderak: <a href='showQuestions.php'>ShowQuestions</a>";
 ?>

@@ -64,21 +64,13 @@
 					document.getElementById('gaia').style.boxShadow =  "0 0 5px 1px green";
 				}
 
-				var posta = email.split("@");
-				if (posta[1] == "ikasle.ehu.eus") { 
-					var erab = posta[0];
-					var luz = erab.length;
-					var iz = erab.slice(0, luz-3);
-					var num = erab.slice(luz-3, luz);
-					if (luz > 8 && parseInt(num)) {
-						document.getElementById('eposta').style.boxShadow =  "0 0 5px 1px green";
-					} else {
-						document.getElementById('eposta').style.boxShadow =  "0 0 5px 1px red";
-						wrong = 0;
-					}
+				var pattern = new RegExp("[a-zA-Z]{3,}[0-9]{3}@ikasle\.ehu\.eus");
+				var res = pattern.test(email);
+				if (res == true) {
+					document.getElementById('eposta').style.boxShadow =  "0 0 5px 1px green";
 				} else {
 					document.getElementById('eposta').style.boxShadow =  "0 0 5px 1px red";
-					wrong = 0;
+						wrong = 0;
 				}
 
 				if (quest.length >= 10) {
@@ -111,6 +103,7 @@
 		<span><a href='credits.html'>Credits</a></span>
 		<span><a href='addQuestion.html'>Add Question</a></span>
 		<span><a href='addQuestion5.html'>Add Question (HTML5)</a></span>
+		<span><a href='php/showQuestions.php'>Show Questions</a></span>
 	</nav>
     <section class="main" id="s1">
     
