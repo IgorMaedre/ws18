@@ -22,15 +22,31 @@
 		die("Connection failed: " . $connection->connect_error);
 	}
 
-	$sql= "INSERT INTO questions (email, question, correctans, wrongans1, wrongans2, wrongans3, difficulty, theme) VALUES ( '$email', '$quest', '$corr', '$wro1', '$wro2', '$wro3', '$diff', '$theme')";
+	if ($email = "" || $quest = "" || $corr = "" || $wro1 = "" || $wro2 = "" || $wro3 = "" || $theme = "") {
+		
+		echo "Some field was left empty!!";
 
-	if ($connection->query($sql) === TRUE) {
-    	echo "New record created successfully <br>";
+	} else if (strlen($quest) < 10) {
+		
+		echo "The question is shorter than 10 characters!!";
+
+	} else if (preg_match("[a-z]{3,}[0-9]{3}@ikasle.ehu.eus", $email)) {
+		
+		echo "The email doesn't fulfill the pattern required";
+
 	} else {
-    	echo "Error: " . $sql . "<br>" . $connection->error;
+		
+		$sql = "INSERT into Questions (email, question, correctans, wrongans1, wrongans2, wrongans3, difficulty, theme) VALUES ('$email', '$quest', '$corr', '$wro1', '$wro2', '$wro3', '$diff', '$theme')";
+
+		if ($conn->query($sql) === TRUE) {
+    		echo "New record created successfully";
+		} else {
+    		echo "Error: " . $sql . "<br>" . $conn->error;
+		}
+
 	}
 
 	$connection->close();
 
-	echo "Itzuli hasierako orrira: <a href='../layout.html'>Layout</a> <br> Egin galdera berri bat: <a href='../addQuestion5.html'>AddQuestion5</a> <br> Ikusi datubaseko galderak: <a href='showQuestions.php'>ShowQuestions</a>";
+	echo "Itzuli hasierako orrira: <a href='../layout.php'>Layout</a> <br> Egin galdera berri bat: <a href='../addQuestion5.html'>AddQuestion5</a> <br> Ikusi datubaseko galderak: <a href='showQuestions.php'>ShowQuestions</a>";
 ?>

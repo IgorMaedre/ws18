@@ -17,24 +17,24 @@
   <body>
   <div id='page-wrap'>
 	<header class='main' id='h1'>
-      <span class="right"><a href='../anonimous.php'>Log Out</a> </span>
-      <!--<span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>-->
+      <span class="right"><a href='php/logIn.php'>Log In</a> </span>
+      <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
 	<h2>Quizz: crazy questions</h2>
     </header>
 	<nav class='main' id='n1' role='navigation'>
-		<span><a href='../layout.php'>Home</a></span>
+		<span><a href='layout.html'>Home</a></span>
 		<span><a href='/quizzes'>Quizzes</a></span>
-		<span><a href='../credits.html'>Credits</a></span>
-		<span><a href='../addQuestion5.html'>Add Question</a></span>
-		<span><a href='showQuestions.php'>Show Questions</a></span>
+		<span><a href='credits.html'>Credits</a></span>
+		<span><a href='addQuestion5.html'>Add Question (HTML5)</a></span>
+		<span><a href='php/showQuestions.php'>Show Questions</a></span>
 	</nav>
     <section class="main" id="s1">
     
 	
 	<div>
-	
+	<!--
 		<?php
-
+			/*
 			include 'dbConfig.php';
 
 			$connection = new mysqli($server, $user, $pass, $database);
@@ -58,8 +58,10 @@
 			}
 
 			$connection->close();
-
+			*/
 		?>
+
+	-->
 
 	</div>
     </section>
