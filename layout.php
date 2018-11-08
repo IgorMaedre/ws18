@@ -23,9 +23,10 @@
 	<nav class='main' id='n1' role='navigation'>
 		<span><a href='layout.php'>Home</a></span>
 		<span><a href='/quizzes'>Quizzes</a></span>
-		<span><a href='credits.html'>Credits</a></span>
-		<span><a href='addQuestion5.html'>Add Question </a></span>
+		<span><a href='credits.php'>Credits</a></span>
+		<span><a href='php/addQuestions.php'>Add Question </a></span>
 		<span><a href='php/showQuestions.php'>Show Questions</a></span>
+		<span><a href='php/showXMLQuestions.php'>Show XML Questions</a></span>
 	</nav>
     <section class="main" id="s1">
     

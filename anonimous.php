@@ -17,14 +17,14 @@
   <div id='page-wrap'>
 	<header class='main' id='h1'>
 		<span class="right"><a href="php/signUp.php">SignUp</a> </span>
-      <span class="right"><a href="php/logIn.php">LogIn</a> </span>
+      <span class="right"><a href="php/login.php">LogIn</a> </span>
       <span class="right" style="display:none;"><a href="/logout">LogOut</a> </span>
 	<h2>Quiz: crazy questions</h2>
     </header>
 	<nav class='main' id='n1' role='navigation'>
 		<span><a href='anonimous.php'>Home</a></span>
 		<span><a href='/quizzes'>Quizzes</a></span>
-		<span><a href='creditsA.html'>Credits</a></span>
+		<span><a href='creditsA.php'>Credits</a></span>
 	</nav>
     <section class="main" id="s1">
     

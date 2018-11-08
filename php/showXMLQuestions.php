@@ -36,30 +36,23 @@
 	
 		<?php
 
-			include 'dbConfig.php';
+			
 
-			$connection = new mysqli($server, $user, $pass, $database);
-
-			if ($connection->connect_error) {
-			die("Connection failed: " . $connection->connect_error);
+			echo "<table><tr><th>Email</th><th>Question</th><th>Correct answer</th></tr>";
+			
+			$xml = simplexml_load_file("../questions.xml");
+			foreach ($xml->children() as $question) {
+				
+				$text = "<tr>";
+				$text .= "<td>" . $question['author'] . "</td>";
+				$text .= "<td>" . $question->itemBody->p . "</td>";
+				$text .= "<td>" . $question->correctResponse->value . "</td>";
+				$text .= "</tr>";
+				echo($text);
 			}
 
-			$sql= "SELECT * FROM questions";
-			$result = $connection->query($sql);
-
-			echo "<table><tr><th>Email</th><th>Question</th><th>Correct answer</th><th>Wrong answer 1</th><th>Wrong answer 2</th><th>Wrong answer 3</th><th>Difficulty</th><th>Theme</th></tr>";
-			if ($result->num_rows > 0){
-			//data output by rows
-			while ($row = $result->fetch_assoc()) {
-				echo "<tr><td>" . $row['email'] . "</td><td>" . $row['question'] . "</td><td>" . $row['correctans'] . "</td><td>" . $row['wrongans1'] . "</td><td>" . $row['wrongans2'] . "</td><td>" . $row['wrongans3'] . "</td><td>" . $row['difficulty'] . "</td><td>" . $row['theme'] . "</td></tr>";
-			}
 			echo "</table>";
-			} else {
-			echo "No questions have been added yet. <br>";
-			}
-
-			$connection->close();
-
+			
 		?>
 
 	</div>
@@ -70,4 +63,3 @@
 </div>
 </body>
 </html>
-
